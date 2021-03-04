@@ -1,4 +1,4 @@
-const createMarker = (pos, map) => {
+function createMarker(pos, map) {
     const marker = new google.maps.Marker({
         position: pos,
         map,
