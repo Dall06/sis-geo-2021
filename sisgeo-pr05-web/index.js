@@ -6,8 +6,16 @@ function initMap() {
         },
         zoom: 15,
     }
+    let pos = {
+        lat : 141.152639, 
+        lng : -341.711598,
+    }
 
-    const divMap = document.getElementById("divMap");
-
-    const map = new google.maps.Map(divMap, mapPorps);
+    const dMap = document.getElementById("divMap");
+    const map = new google.maps.Map(dMap, mapPorps);
+    const marker = new google.maps.Marker({
+        position: pos,
+        map,
+        title: "Marker",
+    });
 }
