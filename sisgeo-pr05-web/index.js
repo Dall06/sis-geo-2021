@@ -1,4 +1,4 @@
-function createMarker(pos, map) {
+const createMarker = (pos, map) => {
     const marker = new google.maps.Marker({
         position: pos,
         map,
@@ -7,7 +7,15 @@ function createMarker(pos, map) {
     return marker;
 }
 
-function iniciaMapa() {
+
+const infoWindowString = () => {
+    let inf = `<div class='div-title'><h1>Hello Human</h1>`;
+    inf += `<p>This is a marker</p>`;
+
+    return inf;
+};
+
+function initMap() {
     let mapPorps = {
         center: {
             lat : 141.152639, 
@@ -35,7 +43,7 @@ function iniciaMapa() {
             map.setCenter(_pos);
 
             const infoWindow = new google.maps.InfoWindow({
-                content: "Hello human, this is the contnet"
+                content: infoWindowString()
             });
             
             marker.addListener("mouseover", () => {
