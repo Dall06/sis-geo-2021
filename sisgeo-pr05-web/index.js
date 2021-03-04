@@ -27,7 +27,7 @@ function iniciaMapa() {
         navigator.geolocation.getCurrentPosition((pos) => {
             let _pos = {
                 lat: pos.coords.latitude,
-                lmg: pos.coords.longitude,
+                lng: pos.coords.longitude,
             }
 
             const marker = createMarker(_pos, map);
