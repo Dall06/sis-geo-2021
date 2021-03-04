@@ -7,7 +7,7 @@ const createMarker = (pos, map) => {
     return marker;
 }
 
-function initMap() {
+function iniciaMapa() {
     let mapPorps = {
         center: {
             lat : 141.152639, 
