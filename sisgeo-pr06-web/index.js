@@ -28,9 +28,7 @@ function initMap() {
     setInterval(() => {
       console.log("Moving");
       moveMarkerEventListener(marker);
-    }, 1);
-
-
+    }, 1000);
   }
 
   function moveMarkerEventListener(marker) {
