@@ -26,6 +26,7 @@ function initMap() {
 
   if (navigator.geolocation) {
     setInterval(() => {
+      console.log("Moving");
       moveMarkerEventListener(marker);
     }, 3000);
 
