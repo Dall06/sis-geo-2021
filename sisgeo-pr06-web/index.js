@@ -1,10 +1,10 @@
 function initMap() {
-  var coords = {
+  let coords = {
     lat: 0,
     lng: 0
   };
   
-  var props = {
+  let props = {
     center: coords,
     zoom: 20
   };
@@ -12,7 +12,7 @@ function initMap() {
   let map = new google.maps.Map(document.getElementById("divMap"), props);
 
   var icon = {
-    url: "https://media.giphy.com/media/1ZweHMlSaxcc32mSSu/giphy.gif",
+    url: "https://media.giphy.com/media/1iTH1WIUjM0VATSw/giphy.gif",
     scaledSize: new google.maps.Size(50, 50),
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(0, 0)
