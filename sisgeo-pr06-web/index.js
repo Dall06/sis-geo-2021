@@ -13,7 +13,7 @@ function initMap() {
 
   const icon = {
     url: "https://media.giphy.com/media/1iTH1WIUjM0VATSw/giphy.gif",
-    scaledSize: new google.maps.Size(150, 150),
+    scaledSize: new google.maps.Size(80, 80),
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(0, 0)
   }
