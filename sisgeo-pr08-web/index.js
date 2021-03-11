@@ -6,7 +6,7 @@ fetch('https://corona.lmao.ninja/v3/covid-19/countries')
 .then((r) => {
   r.json().then((d) => {
     d.forEach(e => {
-      console.log(e);
+      // console.log(e);
 
       let row = document.createElement("div");
       row.className = "row border";
