@@ -10,61 +10,19 @@ var props = {
 
 function initMap() {
   fetch('paises.json')
-    .then(function (response) {
+  .then(function(r) {
+    r.json().then(function(data) {
+      const map = new google.maps.Map(document.getElementById("divMap"), props);
 
-      response.json().then(function (datos) {
+      data.array.forEach(m => {
+        fetch('https://corona.lmao.ninja/countries')
+        .then(function(fr) {
+          console.log(fr);
 
-        const map = new google.maps.Map(document.getElementById('divMap'), props);
-
-        console.log(datos);
-
-        datos.forEach(marcador => {
-
-
-          fetch('https://corona.lmao.ninja/countries')
-            .then(function (respuesta) {
-
-              respuesta.json().then(function (datospaises) {
-
-                datospaises.forEach(registro => {
-
-
-                  if (registro.country == marcador.CountryName) {
-
-                    var informacion = "<strong>País:</strong> " + registro.country + "<br><strong>Casos:</strong> " + registro.cases + "<br><strong>Nuevos hoy:</strong> " + registro.todayCases + "<br><strong>Muertes:</strong> " + registro.deaths + "<br><strong>Muertes Hoy:</strong> " + registro.todayDeaths + "<br><strong>Recuperados:</strong> " + registro.recovered + "<br><strong>Activos:</strong> " + registro.active + "<br><strong>Críticos:</strong> " + registro.critical + "<br><strong>Casos por millón:</strong> " + registro.casesPerOneMillion;
-
-                    var infowindow = new google.maps.InfoWindow({
-                      content: informacion
-                    });
-
-                    let marker = new google.maps.Marker({
-                      map: map,
-                      position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CapitalLongitude),
-                      title: marcador.CountryName + registro.cases
-                    });
-
-                    marker.addListener('click', function () {
-                      infowindow.open(map, marker);
-                    });
-
-                  }
-
-
-                });
-
-              });
-
-            });
-
-
-
-        });
-
-
+          
+        })
       });
-
     })
-    .catch(function (error) {
-      console.log('Hubo un problema con la petición Fetch:' + error.message);
-    });
+  })
+  .catch(function(e) {console.log(e);})
 };
