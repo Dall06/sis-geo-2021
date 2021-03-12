@@ -14,7 +14,7 @@ function initMap() {
 
       response.json().then(function (datos) {
 
-        const map = new google.maps.Map(document.getElementById('map'), propiedades);
+        const map = new google.maps.Map(document.getElementById('map'), props);
 
         console.log(datos);
 
