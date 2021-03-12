@@ -10,12 +10,12 @@ var props = {
 
 function initMap() {
   fetch('paises.json')
-    .then((response) => {
+    .then(function(response) {
 
       response.json().then(function(d) {
         const map = new google.maps.Map(document.getElementById('divMap'), props);
 
-        d.forEach((m) => {
+        d.forEach(function(m) {
           fetch('https://corona.lmao.ninja/countries')
             .then(function(r) {
               r.json().then(function(countryData) {
