@@ -14,12 +14,12 @@ function initMap() {
     r.json().then(function(data) {
       const map = new google.maps.Map(document.getElementById("divMap"), props);
 
-      data.array.forEach(m => {
+      data.forEach(m => {
         fetch('https://corona.lmao.ninja/countries')
         .then(function(fr) {
           console.log(fr);
 
-          
+
         })
       });
     })
