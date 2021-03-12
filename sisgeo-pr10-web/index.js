@@ -12,14 +12,14 @@ function initMap() {
   fetch('paises.json')
     .then((response) => {
 
-      response.json().then(function (d) {
+      response.json().then(function(d) {
         const map = new google.maps.Map(document.getElementById('divMap'), props);
 
         d.forEach((m) => {
           fetch('https://corona.lmao.ninja/countries')
-            .then((r) => {
-              r.json().then((countryData) => {
-                countryData.forEach(r => {
+            .then(function(r) {
+              r.json().then(function(countryData) {
+                countryData.forEach(function(r) {
                   if (r.country == m.CountryName) {
                     let info = "<strong>País:</strong> " + r.country + "<br><strong>Casos:</strong> " + 
                                       r.cases + "<br><strong>Nuevos hoy:</strong> " + r.todayCases + 
@@ -36,7 +36,7 @@ function initMap() {
                       title: m.CountryName + r.cases
                     });
 
-                    marker.addListener('click', () => {
+                    marker.addListener('click', function() {
                       infowindow.open(map, marker);
                     });
                   }
