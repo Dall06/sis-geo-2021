@@ -33,8 +33,8 @@ function initMap() {
                   if (dc.country == m.CountryName) {
                     let marker = new google.maps.Marker({
                       map: map,
-                      position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CapitalLongitude),
-                      title: marcador.CountryName + reg.cases
+                      position: new google.maps.LatLng(m.CapitalLatitude, m.CapitalLongitude),
+                      title: m.CountryName + reg.cases
                     });
 
                     marker.addListener('click', function () {
