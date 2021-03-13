@@ -17,9 +17,14 @@ function initMap() {
         data.forEach(m => {
           fetch('https://corona.lmao.ninja/v3/covid-19/countries')
             .then(function (fr) {
-              // console.log(fr);
+              console.log(fr);
+
               fr.json().then(function (dc) {
+                console.log(dc);
+
                 dc.forEach(reg => {
+                  console.log(reg);
+
                   var info = "<strong>País:</strong> "+ reg.country +"<br><strong>Casos:</strong> " + reg.cases + "<br><strong>Nuevos hoy:</strong> " + reg.todayCases + "<br><strong>Muertes:</strong> " + reg.deaths + "<br><strong>Muertes Hoy:</strong> " + reg.todayDeaths + "<br><strong>Recuperados:</strong> " + reg.recovered + "<br><strong>Activos:</strong> " + reg.active + "<br><strong>Críticos:</strong> " + reg.critical + "<br><strong>Casos por millón:</strong> " + reg.casesPerOneMillion;
                   var infoWindow = new google.maps.InfoWindow({
                     content: info,
