@@ -31,6 +31,7 @@ function initMap() {
                   });
 
                   if (dc.country == m.CountryName) {
+                    console.log(m);
                     let marker = new google.maps.Marker({
                       map: map,
                       position: new google.maps.LatLng(m.CapitalLatitude, m.CapitalLongitude),
