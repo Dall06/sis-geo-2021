@@ -33,7 +33,8 @@ function initMap() {
     document.getElementById('divMap'),
     {
       center: coords,
-      zoom: 3
+      zoom: 3,
+      disableDefaultUI: true,
     }
   );
   let labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
