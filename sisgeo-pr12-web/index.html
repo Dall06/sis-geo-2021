@@ -36,24 +36,17 @@
     <div class="container">
       <div class="row m-5">
         <div class="col-12">
-          <div class="card position-absolute top-50 start-50 translate-middle" style="width: 50rem;">
+          <div class="card position-absolute top-50 start-50 translate-middle" style="width: 75%;">
             <div id="divMap"></div>
             <div class="card-body">
               <h5 class="card-title">Map with Marker...</h5>
-              <div class="row p-2">
-                <div class="col-3 text-center">
-                  <button class="btn btn-primary" id="btnroadmap" onclick="setRoadMap()">roadmap</button>
-                </div>
-                <div class="col-3 text-center">
-                  <button class="btn btn-warning" id="btnsatellite" onclick="setSatelliteMap()">satellite</button>
-                </div>
-                <div class="col-3 text-center">
-                  <button class="btn btn-danger" id="btnhybrid" onclick="setHybridMap()">hybrid</button>
-                </div>
-                <div class="col-3 text-center">
-                  <button class="btn btn-success" id="btnterrain" onclick="setTerrainMap()">terrain</button>
-                </div>
-              </div>
+              <select id="selLeng" class="form-select" aria-label="Default select example">
+                <option selected>Select Lenguage</option>
+                <option value="es">Spanish</option>
+                <option value="en">English</option>
+                <option value="it">Italian</option>
+                <option value="ja">Japanese</option>
+              </select>
             </div>
           </div>
         </div>
@@ -64,6 +57,7 @@
 
   <!--Optional JavaScript; choose one of the two-->
   <script src="index.js"></script>
+
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVCNZHDPwh-wnnOTVGqDUjgOLIpHhcFaE&callback=initMap"
     async defer></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
