@@ -50,7 +50,7 @@ function initMap() {
     count++;
   });
 
-  var makerCluster = new MarkerClusterer(map, markeres, {
+  var makerCluster = new MarkerClusterer(map, markers, {
     imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
     maxZoom: 10
 
