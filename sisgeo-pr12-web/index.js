@@ -5,11 +5,11 @@ var coords = {
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 
-const leng = urlParams.get('lenguage');
-document.getElementById('lenguage').value = leng;
+const leng = urlParams.get('language');
+document.getElementById('language').value = leng;
 
 var script = document.createElement('script');
-script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVCNZHDPwh-wnnOTVGqDUjgOLIpHhcFaE&callback=initMap&lenguage=' + leng;
+script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVCNZHDPwh-wnnOTVGqDUjgOLIpHhcFaE&callback=initMap&language=' + leng;
 
 document.head.appendChild(script);
 
