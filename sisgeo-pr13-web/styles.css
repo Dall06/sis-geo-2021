@@ -1,4 +1,7 @@
 #divMap {
     width: 95%;
     height: 95%;
+    margin: 0 auto;
+    padding: 1rem;
+    position: relative;
 }
