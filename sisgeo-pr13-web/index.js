@@ -1,5 +1,5 @@
 function initMap() {
-  var styledMapType = new google.maps.styleMapType(
+  var styledMapType = new google.maps.StyledMapType(
     [
       {
         "elementType": "geometry",
