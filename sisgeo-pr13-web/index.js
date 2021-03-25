@@ -11,8 +11,6 @@ let props = {
 }
 let divMap = document.getElementById('divMap');
 
-document.head.appendChild(script);
-
 function initMap() {
   var styleMapType = new google.maps.styleMapType([
     {
