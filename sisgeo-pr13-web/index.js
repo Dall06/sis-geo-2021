@@ -1,5 +1,3 @@
-var map;
-
 let coords = {
   lat: -31.563910, lng: 147.154312
 }
@@ -9,10 +7,12 @@ let props = {
   // disableDefaultUI: true,
   mapTypeControlOptions: ['roadmap', 'satellite', 'hybrid', 'terrain', 'style_map']
 }
-let divMap = document.getElementById('divMap');
+
 
 function initMap() {
-  var styleMapType = new google.maps.styleMapType([
+  let divMap = document.getElementById('divMap');
+
+  var styledMapType = new google.maps.styleMapType([
     {
       elementType: "geometry",
       stylers: [
@@ -253,15 +253,14 @@ function initMap() {
         }
       ]
     }
-  ], {
-    name: 'Dark mode map',
-  }
+    ], {
+      name: 'Dark mode map',
+    }
   );
 
-  map = new google.maps.Map(divMap, props);
+  let map = new google.maps.Map(divMap, props);
 
-  map.mapTypes.set('style_map', styleMapType);
+  map.mapTypes.set('style_map', styledMapType);
   map.setMapTypeId('style_map');
-
 
 };
