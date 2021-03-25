@@ -1,16 +1,5 @@
 function initMap() {
-  let divMap = document.getElementById('divMap');
-
-  let coords = {
-    lat: -31.563910, lng: 147.154312
-  }
-
-  let props = {
-    center: coords,
-    zoom: 14,
-    // disableDefaultUI: true,
-    mapTypeControlOptions: ['roadmap', 'satellite', 'hybrid', 'terrain', 'style_map']
-  }
+  var divMap = document.getElementById('divMap');
 
   var styledMapType = new google.maps.styleMapType([
     {
@@ -271,7 +260,18 @@ function initMap() {
     }
   ], { name: 'Dark mode map', });
 
-  let map = new google.maps.Map(divMap, props);
+  var coords = {
+    lat: -31.563910, lng: 147.154312
+  }
+
+  var props = {
+    center: coords,
+    zoom: 14,
+    // disableDefaultUI: true,
+    mapTypeControlOptions: ['roadmap', 'satellite', 'hybrid', 'terrain', 'style_map']
+  }
+
+  var map = new google.maps.Map(divMap, props);
 
   map.mapTypes.set('style_map', styledMapType);
   map.setMapTypeId('style_map');
