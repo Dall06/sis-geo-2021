@@ -33,6 +33,20 @@ var styleMapType = new google.maps.styleMapType([
         color: '#28ad37',
       }],
     },
+    {
+      featureType: 'road',
+      elementType: 'geometry.stroke',
+      stylers: [{
+        color: '#9caab5',
+      }],
+    },
+    {
+      featureType: 'road',
+      elementType: 'labels.text.fill',
+      stylers: [{
+        color: '#e0b9eb',
+      }],
+    },
   ], {
     name: 'Dark mode map',
   }
