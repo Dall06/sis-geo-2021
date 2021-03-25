@@ -268,7 +268,9 @@ function initMap() {
     center: coords,
     zoom: 14,
     // disableDefaultUI: true,
-    mapTypeControlOptions: ['roadmap', 'satellite', 'hybrid', 'terrain', 'style_map']
+    mapTypeControlOptions: {
+      mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'style_map']
+    }
   }
 
   var map = new google.maps.Map(divMap, props);
