@@ -57,12 +57,11 @@ const StartTrackingAction = () => {
       let speed = position.coords.speed ? position.coords.speed : 'no aviable';
       let updatedAt = (new Date(position.timestamp)).toString();
 
-      const html = `_coords
-              <p>Coords: ${_coords}</p>
-              <p>Accuracy: ${accuracy}</p>
-              <p>Altitude: ${altitude}</p>
-              <p>Speed: ${speed}</p>
-              <p>Date and time: ${updatedAt}</p>`;
+      const html = `<p>Coords: ${_coords}</p>
+                    <p>Accuracy: ${accuracy}</p>
+                    <p>Altitude: ${altitude}</p>
+                    <p>Speed: ${speed}</p>
+                    <p>Date and time: ${updatedAt}</p>`;
 
       divData.innerHTML = html;
       marker.setPosition(new google.maps.LatLng(lat, lng));
@@ -75,7 +74,8 @@ const StopTrackingAction = () => {
   if (watchId !== null) {
     navigator.geolocation.clearWatch(watchId);
 
-    const html = `<p>Action stopped</p>`;
+    const html = `<p>Action stopped</p>
+                  <p>Your last position is showed on the map</p>`;
     divData.innerHTML = html;
   }
 }
