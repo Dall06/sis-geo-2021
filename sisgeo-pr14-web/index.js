@@ -8,8 +8,8 @@ var positionOptions;
 
 function initMap() {
   const icon = {
-    url: "http://gph.is/22YyS3H",
-    scaledSize: new google.maps.Size(80, 80),
+    url: "https://media.giphy.com/media/ICoxhc8wGbJ8k/giphy.gif",
+    scaledSize: new google.maps.Size(60, 60),
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(0, 0)
   }
