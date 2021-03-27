@@ -3,6 +3,9 @@ var divMap = document.getElementById('divMap');
 var divData = document.getElementById('divData');
 var watchId = null;
 
+var marker;
+var positionOptions;
+
 function initMap() {
   const icon = {
     url: "https://media.giphy.com/media/1iTH1WIUjM0VATSw/giphy.gif",
@@ -18,28 +21,23 @@ function initMap() {
   var props = {
     center: coords,
     zoom: 14,
-    // disableDefaultUI: true,
-    mapTypeControlOptions: {
-      mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'style_map']
-    }
+    disableDefaultUI: true,
   }
   
   map = new google.maps.Map(divMap, props);
 
 
-  var marker = new google.maps.Marker({
+  marker = new google.maps.Marker({
     position: { lat: 0, lng: 0 },
-    icon: icono,
+    icon: icon,
     map: map
   });
 
-  var positionOptions = {
+  positionOptions = {
     enableHighAccuracy: true,
     timeout: 5 * 1000,
     maximumAge: 15 * 1000
   }
-
-
 }
 
 function error(positioError) {
