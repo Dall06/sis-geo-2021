@@ -1,11 +1,11 @@
-let coords = { lat: 21.152639, lng: -101.711598 };
-let limits = {
+var coords = { lat: 21.152639, lng: -101.711598 };
+var limits = {
   north: 21.390039,
   south: 20.858414,
   west: -102.149631,
   east: -101.092990
 }
-let props = [];
+var props = [];
 
 function initMap() {
   // m1
@@ -56,15 +56,17 @@ function initMap() {
     },
     fullscreenControl: true
   });
-    // m6
-    props.push({
-      center: coords,
-      zoom: 12,
-      restriction: {
-        latLngBounds: limits,
-        strictBounds: false
-      }
-    });
+  // m6
+  props.push({
+    center: coords,
+    zoom: 12,
+    restriction: {
+      latLngBounds: limits,
+      strictBounds: false
+    }
+  });
+
+  console.log(props);
 
   var map_1 = new google.maps.Map(document.getElementById('divMap_1'), props[0]);
   var map_2 = new google.maps.Map(document.getElementById('divMap_2'), props[1]);
