@@ -1,13 +1,13 @@
-var coords = { lat: 21.152639, lng: -101.711598 };
-var limits = {
-  north: 21.390039,
-  south: 20.858414,
-  west: -102.149631,
-  east: -101.092990
-}
-var props = [];
-
 function initMap() {
+  var coords = { lat: 21.152639, lng: -101.711598 };
+  var limits = {
+    north: 21.390039,
+    south: 20.858414,
+    west: -102.149631,
+    east: -101.092990
+  }
+  var props = [];
+
   // m1
   props.push({
     center: coords,
