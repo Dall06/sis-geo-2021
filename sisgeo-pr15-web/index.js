@@ -9,25 +9,25 @@ function initMap() {
   var props = [];
 
   // m1
-  props.push({
+  props[0] = {
     center: coords,
     zoom: 12
-  });
+  };
   // m2
-  props.push({
+  props[1] = {
     center: coords,
     zoom: 12,
     disableDefaultUI: true
-  });
+  };
   // m3
-  props.push({
+  props[2] = {
     center: coords,
     zoom: 12,
     zoomControl: false,
     scaleControl: false
-  });
+  };
   // m4
-  props.push({
+  props[3] = {
     center: coords,
     zoom: 12,
     mapTypeControl: true,
@@ -35,9 +35,9 @@ function initMap() {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
       mapTypeIds: ['roadmap', 'satellite', 'terrain']
     }
-  });
+  };
   // m5
-  props.push({
+  props[4] = {
     center: coords,
     zoom: 12,
     mapTypeControl: true,
@@ -55,16 +55,16 @@ function initMap() {
       position: google.maps.ControlPosition.LEFT_TOP
     },
     fullscreenControl: true
-  });
+  };
   // m6
-  props.push({
+  props[5] = {
     center: coords,
     zoom: 12,
     restriction: {
       latLngBounds: limits,
       strictBounds: false
     }
-  });
+  };
 
   console.log(props);
 
