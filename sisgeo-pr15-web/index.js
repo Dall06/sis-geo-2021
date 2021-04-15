@@ -1,4 +1,4 @@
-function iniciaMapa() {
+function initMap() {
   var coords = { lat: 21.152639, lng: -101.711598 };
   var limits = {
     north: 21.390039,
@@ -69,10 +69,6 @@ function iniciaMapa() {
   console.log(props);
 
   var map_1 = new google.maps.Map(document.getElementById('divMap_1'), props[0]);
-  var map_2 = new google.maps.Map(document.getElementById('divMap_2'), props[1]);
-  var map_3 = new google.maps.Map(document.getElementById('divMap_3'), props[2]);
-  var map_4 = new google.maps.Map(document.getElementById('divMap_4'), props[3]);
-  var map_5 = new google.maps.Map(document.getElementById('divMap_5'), props[4]);
-  var map_6 = new google.maps.Map(document.getElementById('divMap_6'), props[5]);
+
 
 }
