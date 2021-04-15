@@ -1,5 +1,6 @@
 function initMap() {
   var coords = { lat: 21.152639, lng: -101.711598 };
+  
   var limits = {
     north: 21.390039,
     south: 20.858414,
