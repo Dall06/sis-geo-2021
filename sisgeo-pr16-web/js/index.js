@@ -34,7 +34,6 @@ const onClickSearchButtonAction = () => {
     fields: ['place_id', 'name', 'formatted_address', 'icon', 'geometry']
   };
 
-  service = new google.maps.places.PlacesService(map);
   service.findPlaceFromQuery(request, function (results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
