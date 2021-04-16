@@ -47,6 +47,5 @@ const onClickSearchButtonAction = () => {
 
 function initMap() {
   infoWindow = new google.maps.InfoWindow();
-  var divMap = document.getElementById('divMap');
-  map = new google.maps.Map(divMap, propiedades);
+  map = new google.maps.Map(document.getElementById('divMap'), propiedades);
 }
