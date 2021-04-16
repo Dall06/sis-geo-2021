@@ -1,121 +1,112 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="styles.css">
+    <title>INSPINIA | Main view</title>
 
-  <title>Hello, Human!</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
 </head>
 
-<header>
+<body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <!-- Image and text -->
-      <a class="navbar-brand" href="#">
-        <img src="https://cdn.iconscout.com/icon/free/png-256/robot-130-530368.png" alt="" width="30" height="24"
-          class="d-inline-block align-top">
-        Practice #14 Watch Position
-      </a>
-    </div>
-  </nav>
+<div id="wrapper">
 
-</header>
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="block m-t-xs font-bold">Example user</span>
+                            <span class="text-muted text-xs block">menu <b class="caret"></b></span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li class="active">
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Main view</span></a>
+                </li>
+                <li>
+                    <a href="minor.html"><i class="fa fa-th-large"></i> <span class="nav-label">Minor view</span> </a>
+                </li>
+            </ul>
 
-<body id="body" class="bg-dark">
-
-  <div class="container-fluid py-5">
-    <div class="container">
-
-      <div class="row m-5">
-
-        <div class="col-12 col-md-6">
-          <div class="card" style="width: 90%; height: 90%;">
-            <div class="card-body">
-              <h5 class="card-title">Standar Map Controllers</h5>
-            </div>
-            <div id="divMap_0"></div>
-          </div>
         </div>
+    </nav>
 
-        <div class="col-12 col-md-6">
-          <div class="card" style="width: 90%; height: 90%;">
-            <div class="card-body">
-              <h5 class="card-title">Standar Map Without Controllers</h5>
-            </div>
-            <div id="divMap_1"></div>
-          </div>
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    <form role="search" class="navbar-form-custom" method="post" action="#">
+                        <div class="form-group">
+                            <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
         </div>
-
-      </div>
-
-
-      <div class="row m-5">
-
-        <div class="col-12 col-md-6">
-          <div class="card" style="width: 90%; height: 90%;">
-            <div class="card-body">
-              <h5 class="card-title">No Zoom Map</h5>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center m-t-lg">
+                        <h1>
+                            INSPINIA Static Seed Project for BS4
+                        </h1>
+                        <small>
+                            It is an application skeleton for a typical web app. You can use it to quickly bootstrap your webapp projects and dev environment for these projects.
+                        </small>
+                    </div>
+                </div>
             </div>
-            <div id="divMap_2"></div>
-          </div>
         </div>
-
-        <div class="col-12 col-md-6">
-          <div class="card" style="width: 90%; height: 90%;">
-            <div class="card-body">
-              <h5 class="card-title">Map whith ControlOptions</h5>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
             </div>
-            <div id="divMap_3"></div>
-          </div>
-        </div>
-
-      </div>
-
-
-      <div class="row m-5">
-
-        <div class="col-12 col-md-6">
-          <div class="card" style="width: 90%; height: 90%;">
-            <div class="card-body">
-              <h5 class="card-title">Map whith ControlPosition</h5>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2018
             </div>
-            <div id="divMap_4"></div>
-          </div>
         </div>
-
-        <div class="col-12 col-md-6">
-          <div class="card" style="width: 90%; height: 90%;">
-            <div class="card-body">
-              <h5 class="card-title">Map With Restricting MapBounds</h5>
-            </div>
-            <div id="divMap_5"></div>
-          </div>
-        </div>
-
-      </div>
 
     </div>
-  </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
 
 
-  <!--Optional JavaScript; choose one of the two-->
-  <script src="index.js"></script>
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVCNZHDPwh-wnnOTVGqDUjgOLIpHhcFaE&callback=initMap"
-    async defer></script>
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>
