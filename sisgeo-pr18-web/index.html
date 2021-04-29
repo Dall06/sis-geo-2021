@@ -39,7 +39,7 @@
         <div class="card" style="width: 100%;">
           <div class="card-body">
             <h5 class="card-title">Add product</h5>
-            <form id="formList" onsubmit="onSubmit()">
+            <form id="formList">
               <div class="col-12 col-md4 py-2">
                 <input type="text" name="name" required class="form-control" placeholder="product name">
                 <br>
@@ -96,8 +96,10 @@
         code: formList.code.value
       });
     }
-    const onDelete = () => {
 
+    const onDelete = (e) => {
+      let id = e.target.parentElement.getAttribute("id");
+      database.collection("products").doc(id).delete();
     }
 
     const renderProducts = (doc) => {
@@ -106,7 +108,8 @@
       let code = document.createElement("span");
 
       let delete_button = document.createElement("button");
-      delete_button.className="btn btn-danger m-3"
+      delete_button.className="btn btn-danger m-3";
+      delete_button.addEventListener("click", onDelete)
       
 
       name.textContent = doc.data().name + " ";
@@ -120,11 +123,18 @@
       ulList.appendChild(li);
     }
 
+    formList.addEventListener('submit', onSubmit);
+
     database.collection("products").onSnapshot(snapshot => {
       let changes = snapshot.docChanges();
       changes.forEach((change) => {
         if(change.type == "added") {
-          renderProducts(chenge.doc);
+          renderProducts(change.doc);
+        }
+        if(change.type == "removed") {
+          renderProducts(change.doc);
+          let id = document.getElementById(change.doc.id)
+          ulList.removeChild(id);
         }
       });
     })
