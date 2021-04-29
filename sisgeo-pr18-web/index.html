@@ -23,7 +23,7 @@
       <a class="navbar-brand" href="#">
         <img src="https://cdn.iconscout.com/icon/free/png-256/robot-130-530368.png" alt="" width="30" height="24"
           class="d-inline-block align-top">
-        Practice #15 Many maps Controllers
+        Practice #18 Many maps Controllers
       </a>
     </div>
   </nav>
@@ -51,13 +51,12 @@
           </div>
         </div>
       </div>
+
       <div class="col-md-6 col-lg-8">
-        <div class="card" style="width: 100%; height: 50rem;">
+        <div class="card" style="width: 100%; height: 40rem;">
           <div class="card-body">
             <h5 class="card-title">Product List</h5>
-            <ul id="ulList" class="list-group">
-
-            </ul>
+            <ul id="ulList" class="list-group" style="overflow-y: scroll; height: 35rem; margin-left: 2rem;"></ul>
           </div>
         </div>
       </div>
@@ -72,74 +71,6 @@
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
-  <script>
-    var firebaseConfig = {
-      apiKey: "AIzaSyCPLb1ClS43wfuD9MFz3K9qWUxrKPPtvEA",
-      authDomain: "sis-geo-2021.firebaseapp.com",
-      projectId: "sis-geo-2021",
-      storageBucket: "sis-geo-2021.appspot.com",
-      messagingSenderId: "707123266803",
-      appId: "1:707123266803:web:c3a388fb17b07fb062a386"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-
-    const database = firebase.firestore();
-
-    const ulList = document.querySelector("#ulList");
-    const formList = document.querySelector("#formList");
-
-    const onSubmit = (e) => {
-      e.preventDefault();
-      database.collection("products").add({
-        name: formList.name.value,
-        code: formList.code.value
-      });
-    }
-
-    const onDelete = (e) => {
-      let id = e.target.parentElement.getAttribute("id");
-      database.collection("products").doc(id).delete();
-    }
-
-    const renderProducts = (doc) => {
-      let li = document.createElement("li");
-      let name = document.createElement("span");
-      let code = document.createElement("span");
-
-      let delete_button = document.createElement("button");
-      delete_button.className = "btn btn-danger m-3";
-      delete_button.addEventListener("click", onDelete)
-
-
-      name.textContent = doc.data().name + " ";
-      code.textContent = doc.data().code + " ";
-
-      li.setAttribute("id", doc.id);
-      li.appendChild(name);
-      li.appendChild(code);
-      li.appendChild(delete_button);
-
-      ulList.appendChild(li);
-    }
-
-    formList.addEventListener('submit', onSubmit);
-
-    database.collection("products").onSnapshot(snapshot => {
-      let changes = snapshot.docChanges();
-      changes.forEach((change) => {
-        if (change.type == "added") {
-          renderProducts(change.doc);
-        }
-        if (change.type == "removed") {
-          renderProducts(change.doc);
-          let id = document.getElementById(change.doc.id)
-          ulList.removeChild(id);
-        }
-      });
-    })
-
-  </script>
   <script src="index.js"></script>
 </body>
 
