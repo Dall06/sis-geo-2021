@@ -71,18 +71,19 @@
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
   <script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCPLb1ClS43wfuD9MFz3K9qWUxrKPPtvEA",
-    authDomain: "sis-geo-2021.firebaseapp.com",
-    projectId: "sis-geo-2021",
-    storageBucket: "sis-geo-2021.appspot.com",
-    messagingSenderId: "707123266803",
-    appId: "1:707123266803:web:e997cf192acfe59962a386"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCPLb1ClS43wfuD9MFz3K9qWUxrKPPtvEA",
+      authDomain: "sis-geo-2021.firebaseapp.com",
+      projectId: "sis-geo-2021",
+      storageBucket: "sis-geo-2021.appspot.com",
+      messagingSenderId: "707123266803",
+      appId: "1:707123266803:web:e997cf192acfe59962a386"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
 
     const database = firebase.firestore();
 
@@ -108,9 +109,9 @@
       let code = document.createElement("span");
 
       let delete_button = document.createElement("button");
-      delete_button.className="btn btn-danger m-3";
+      delete_button.className = "btn btn-danger m-3";
       delete_button.addEventListener("click", onDelete)
-      
+
 
       name.textContent = doc.data().name + " ";
       code.textContent = doc.data().code + " ";
@@ -128,10 +129,10 @@
     database.collection("products").onSnapshot(snapshot => {
       let changes = snapshot.docChanges();
       changes.forEach((change) => {
-        if(change.type == "added") {
+        if (change.type == "added") {
           renderProducts(change.doc);
         }
-        if(change.type == "removed") {
+        if (change.type == "removed") {
           renderProducts(change.doc);
           let id = document.getElementById(change.doc.id)
           ulList.removeChild(id);
