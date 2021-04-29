@@ -73,19 +73,20 @@
   <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
   <script>
-    var firebaseConfig = {
-      apiKey: "AIzaSyB4jURVaHaHIgovo0YZXCZBo2f9b0lgY_4",
-      authDomain: "sis-geo-school.firebaseapp.com",
-      projectId: "sis-geo-school",
-      storageBucket: "sis-geo-school.appspot.com",
-      messagingSenderId: "868397807744",
-      appId: "1:868397807744:web:6dd48a7e86fc0276e70e65",
-      measurementId: "G-6HTD512C16"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCPLb1ClS43wfuD9MFz3K9qWUxrKPPtvEA",
+    authDomain: "sis-geo-2021.firebaseapp.com",
+    projectId: "sis-geo-2021",
+    storageBucket: "sis-geo-2021.appspot.com",
+    messagingSenderId: "707123266803",
+    appId: "1:707123266803:web:e997cf192acfe59962a386"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
     const database = firebase.firestore();
+
     const ulList = document.querySelector("#ulList");
     const formList = document.querySelector("#formList");
 
