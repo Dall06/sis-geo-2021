@@ -1,7 +1,7 @@
 ProductEditForm.addEventListener('submit',(e)=> {
     e.preventDefault();
 
-    let id =ProductEditForm.id.value;
+    let id = ProductEditForm.id.value;
     let name = ProductEditForm.name.value;
     let code = ProductEditForm.code.value;
 
@@ -10,9 +10,9 @@ ProductEditForm.addEventListener('submit',(e)=> {
     registry.updateRegistry();
 
     var currentRegistry = document.getElementById(id);
-    currentRegistry.querySelector('.name').value = name + ' ';
-    currentRegistry.querySelector('.code').value = code + ' ' ;
-
+    currentRegistry.querySelector('.code').textContent = code;
+    currentRegistry.querySelector('.name').textContent = "\t" + name;
+    
     ProductEditForm.name.value ='';
     ProductEditForm.code.value ='';
 

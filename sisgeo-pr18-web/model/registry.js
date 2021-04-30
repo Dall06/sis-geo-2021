@@ -16,7 +16,7 @@ class Registry {
         });
     }
 
-    editRegistry = (id) => {
+    editRegistry = () => {
         ProductEditForm.name.value = this.name;
         ProductEditForm.code.value = this.code;
         ProductEditForm.id.value = this.id;

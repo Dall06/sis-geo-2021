@@ -1,4 +1,4 @@
-database.collection('productos').onSnapshot( snapshot =>{
+database.collection('products').onSnapshot( snapshot =>{
     let changes = snapshot.docChanges();
     changes.forEach( change => {
         if(change.type == 'added'){
@@ -6,7 +6,7 @@ database.collection('productos').onSnapshot( snapshot =>{
         } else if(change.type=='removed'){
             console.log(change.doc.id);
             let valorid = document.getElementById(change.doc.id);
-            productoslista.removeChild(valorid);
+            ProductsUlLists.removeChild(valorid);
         }
     });
 });
