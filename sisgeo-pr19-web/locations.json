@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Ciudad de México",
+        "state": "Cdmx",
+        "coords": {
+            "lat": 19.357272,
+            "lng": -99.147104
+        },
+        "poblation": 8851080
+    },
+    {
+        "name": "Ecatepec",
+        "state": "state de México",
+        "coords": {
+            "lat": 19.560188,
+            "lng": -99.042173
+        },
+        "poblation": 1655015
+    },
+    {
+        "name": "Guadalajara",
+        "state": "Jalisco",
+        "coords": {
+            "lat": 20.676012,
+            "lng": -103.335069
+        },
+        "poblation": 1495182
+    },
+    {
+        "name": "Puebla",
+        "state": "Puebla",
+        "coords": {
+            "lat": 19.041325,
+            "lng": -98.210819
+        },
+        "poblation": 1434062
+    },
+    {
+        "name": "Tijuana",
+        "state": "Baja California Norte",
+        "coords": {
+            "lat": 32.503573,
+            "lng": -116.967028
+        },
+        "poblation": 1321004
+    },
+    {
+        "name": "Juárez",
+        "state": "Chihuahua",
+        "coords": {
+            "lat": 31.668894,
+            "lng": -106.412507
+        },
+        "poblation": 1300983
+    },
+    {
+        "name": "León",
+        "state": "Guanajuato",
+        "coords": {
+            "lat": 21.128611,
+            "lng": -101.667725
+        },
+        "poblation": 1238962
+    }
+]
