@@ -35,7 +35,7 @@ function initMap() {
           radius: Math.sqrt(location.poblation),
         });
 
-        let polyLine = new google.maps.PolyLine({
+        let polyLine = new google.maps.Polyline({
           path: fligthsCoords,
           geodesic: true, // 
           strokeColor: '#666666',
