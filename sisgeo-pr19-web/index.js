@@ -20,7 +20,7 @@ function initMap() {
       locations.forEach(location => {
         console.log(location);
 
-        let circle = new google.maps.circle({
+        let circle = new google.maps.Circle({
           strokeColor: '#FF0000',
           strokeOpacity: 0.6,
           strokeWeight: 2,
