@@ -23,7 +23,7 @@ function initMap() {
     response.json().then((locations) => {
       locations.forEach(location => {
         console.log(location);
-        fligthsCoords.push({lat: location.lat, lng: location.lng})
+        fligthsCoords.push(location.cords)
 
 
         let circle = new google.maps.Circle({
