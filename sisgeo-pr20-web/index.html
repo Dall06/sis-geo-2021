@@ -23,92 +23,137 @@
       <a class="navbar-brand" href="#">
         <img src="https://cdn.iconscout.com/icon/free/png-256/robot-130-530368.png" alt="" width="30" height="24"
           class="d-inline-block align-top">
-        Practice #18 Firebase 2
+        Practice #20 Firebase auth
       </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signinModal">signin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#accountModal">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="exitLi">Exit</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
-
 </header>
 
 <body id="body" class="bg-dark">
+  <!-- Modal LOGIN -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">email</span>
+              <input id="inEmail" type="text" name="email" class="form-control" id="email" required placeholder="email" aria-label="email">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" >password</span>
+              <input id="inPass" type="password" name="password" class="form-control" required placeholder="password" id="password" aria-label="password">
+            </div>
+
+            <div class="modal-footer mb-3 text-center">
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary" id="login-btn">Save changes</button>
+                <p class="error text-danger"></p>
+              </div>
+              <div class="text-center">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal SIGNIN-->
+  <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="signin-email">email</span>
+              <input id="inEmail" type="text" name="sigin_email" class="form-control" required placeholder="email" aria-label="email"
+                aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="sigin-password">password</span>
+              <input id="inPass" name="sigin_password" type="password" class="form-control" required placeholder="password"
+                aria-label="password" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="modal-footer mb-3 text-center">
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary" id="login-btn">Sign In</button>
+                <p class="error text-danger"></p>
+              </div>
+              <div class="text-center">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </form>
+        </div>>
+      </div>
+    </div>
+  </div>
+  <!-- Modal INFO-->
+  <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-footer mb-3 text-center">
+            <div class="text-center">
+              <button type="button" class="btn btn-primary" id="login-btn">Save changes</button>
+            </div>
+            <div class="text-center">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>>
+      </div>
+    </div>
+  </div>
 
   <div class="container-fluid py-5">
-    <div class="container row">
-
-      <div class="col-lg-12">
-        <div class="card" style="width: 95%;">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-6">
-                <h3 class="card-title" style="margin-left: 3rem;">Product List</h3>
-              </div>
-              <div class="col-4">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                  ADD +
-                </button>
-              </div>
-            </div>
-          </div>
+    <div class="row" class="text-center col-4" id="lstFood">
+      <div class="card" style="width: 18rem;">
+        <img src="img/rice.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Name</h5>
+          <p class="card-text">Price</p>
         </div>
       </div>
-
-      <div class="modal" id="addModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Add product</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form id="productAddForm">
-                <div>
-                  <input type="text" name="name" required class="form-control" placeholder="product name">
-                  <br>
-                  <input type="number" name="code" required step="any" class="form-control" placeholder="product code">
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary" type="submit">Save changes</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal" id="editModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Edit product</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form id="productEditForm">
-                <div>
-                  <input type="text" name="id" required class="form-control" placeholder="product id">
-                  <br>
-                  <input type="text" name="name" required class="form-control" placeholder="product name">
-                  <br>
-                  <input type="number" name="code" required step="any" class="form-control" placeholder="product code">
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary" type="submit">Save changes</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-12" style="margin-top: 1rem;">
-        <div class="card" style="width: 95%; height: 40rem;">
-          <div class="card-body">
-            <ul id="productsUlList" class="list-group" style="overflow-y: scroll; height: 35rem; margin-left: 2rem; width: 95%; padding: 2rem;">
-            </ul>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 
@@ -118,21 +163,25 @@
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
   <!-- <script src="index.js"></script> -->
   <script src="database/database.js"></script>
   <script src="constants.js"></script>
-  <script src="model/registry.js"></script>
-  <!-- <script src="controller/registryController.js"></script> -->
-  <script src="view_controller/showRegistries.js"></script>
-  <script src="view_controller/submitRegistry.js"></script>
-  <script src="view_controller/updateRegistry.js"></script>
-  <script src="service.js"></script>
+  <script src="model/login.js"></script>
+  <script src="view_controller/submitLogin.js"></script>
+  <script src="view_controller/submitExit.js"></script>
 </body>
 
 </html>

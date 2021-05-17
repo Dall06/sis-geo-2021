@@ -1,3 +1,3 @@
-const ProductsUlLists = document.querySelector("#productsUlList");
-const ProductAddForm = document.querySelector("#productAddForm");
-const ProductEditForm = document.querySelector("#productEditForm");
+const LoginForm = document.getElementById("loginForm");
+const ExitLi = document.getElementById("exitLi");
+
