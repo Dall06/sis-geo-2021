@@ -22,6 +22,7 @@ function initMap() {
   fetch('locations.json').then((response) => {
     response.json().then((locations) => {
       locations.forEach(location => {
+        console.log(location);
         fligthsCoords.push({lat: location.lat, lng: location.lng})
 
 
