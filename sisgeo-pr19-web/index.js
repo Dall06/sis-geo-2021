@@ -10,15 +10,20 @@ var props = {
 
 var divMap;
 var map;
+var tbl;
+var fligthsCoords = [];
 
 function initMap() {
   divMap = document.getElementById('divMap');
+  tbl = document.getElementById('tblLocations');
+
   map = new google.maps.Map(divMap, props);
 
   fetch('locations.json').then((response) => {
     response.json().then((locations) => {
       locations.forEach(location => {
-        console.log(location);
+        fligthsCoords.push({lat: location.lat, lng: location.lng})
+
 
         let circle = new google.maps.Circle({
           strokeColor: '#FF0000',
@@ -29,8 +34,23 @@ function initMap() {
           center: location.coords,
           radius: Math.sqrt(location.poblation),
         });
-        
 
+        let polyLine = new google.map.PolyLine({
+          path: fligthsCoords,
+          geodesic: true, // 
+          strokeColor: '#666666',
+          strokeOpacity: 1,
+          strokeWeight: 2,
+        });
+        polyLine.setMap(map);
+
+        tbl.innerHTML = `
+        <th scope="row">${location.name}</th>
+        <td>${location.state}</td>
+        <td>${location.poblation}</td>
+        <td>${location.coords.lat}</td>
+        <td>${location.coords.lng}</td>
+      `;
 
       });
     });
