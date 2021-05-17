@@ -46,13 +46,13 @@ function initMap() {
         });
         polyLine.setMap(map);
 
-        stringTbl += `
-        <th scope="row">${location.name}</th>
-        <td>${location.state}</td>
-        <td>${location.poblation}</td>
-        <td>${location.coords.lat}</td>
-        <td>${location.coords.lng}</td>
-      `;
+        stringTbl += `<tr>
+          <th scope="row">${location.name}</th>
+          <td>${location.state}</td>
+          <td>${location.poblation}</td>
+          <td>${location.coords.lat}</td>
+          <td>${location.coords.lng}</td>
+          </tr>`;
         tbl.innerHTML = stringTbl;
 
       });
