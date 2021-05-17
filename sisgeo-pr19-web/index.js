@@ -11,6 +11,7 @@ var props = {
 var divMap;
 var map;
 var tbl;
+var stringTbl = '';
 var fligthsCoords = [];
 
 function initMap() {
@@ -23,7 +24,7 @@ function initMap() {
     response.json().then((locations) => {
       locations.forEach(location => {
         console.log(location);
-        fligthsCoords.push(location.cords)
+        fligthsCoords.push({lat: parseFloat(location.coords.lat), lng: parseFloat(location.coords.lng)})
 
 
         let circle = new google.maps.Circle({
@@ -45,13 +46,14 @@ function initMap() {
         });
         polyLine.setMap(map);
 
-        tbl.innerHTML = `
+        stringTbl += `
         <th scope="row">${location.name}</th>
         <td>${location.state}</td>
         <td>${location.poblation}</td>
         <td>${location.coords.lat}</td>
         <td>${location.coords.lng}</td>
       `;
+        tbl.innerHTML = stringTbl;
 
       });
     });
