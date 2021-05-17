@@ -1,5 +1,18 @@
-class Login {  
-    constructor(id, email, password){
+validateErrMsj = (code) => {
+    switch (code) {
+        case 'auth/wrong-password':
+            return 'wrong password, try again';
+        case 'auth/user-not-foun':
+            return 'No user found';
+        case 'auth/weak-password':
+            return 'weak password';
+        default:
+            return 'ERROR';
+    }
+}
+
+class Login {
+    constructor(id, email, password) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -13,8 +26,8 @@ class Login {
             // LoginForm.email.value ='';
             // LoginForm.password.value ='';
         }).catch((err) => {
-            loginModel.querySelector('.error').innerHTML = err.code;
-            // alert(err);
+            LoginForm.querySelector('.error').innerHTML = validateErrMsj(err.code);
+            alert(err);
         });
     }
 
