@@ -11,3 +11,5 @@ const FetchInfoLink = document.getElementById("logged-account");
 
 const loggedOutItems = document.querySelectorAll(".logged-out");
 const loggedInItems = document.querySelectorAll(".logged-in");
+
+var isGoogleLogged = false;
