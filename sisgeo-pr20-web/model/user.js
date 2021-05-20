@@ -66,12 +66,13 @@ class User {
             const html = `
                 <p>Name: ${doc.data().name}</p>
                 <p>Email: ${user.email}</p>
-                <p>Phone: ${doc.data().phone}</p>
-                <p>Address: ${doc.data().address}</p>
+                <img src="${user.photoURL}">
             `;
+            LoginForm.reset();
+            $('#loginModal').modal('hide');
             FetchInfoDiv.innerHTML = html;
         }).catch(function (error) {
-            // LoginForm.querySelector('.error').innerHTML = validateErrMsj(err.code);
+            LoginForm.querySelector('.error').innerHTML = validateErrMsj(err.code);
             console.log(error);
         });
     }
