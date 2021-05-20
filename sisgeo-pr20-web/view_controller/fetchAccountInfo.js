@@ -3,7 +3,7 @@ const ConfigureMenu = (user) => {
         console.log(user)
         database.collection('users').doc(user.uid).get().then(doc => {
             const html = `
-                <p>Name: ${doc.data().name}</p>
+                <p>Name: ${doc.data().name == null ? doc.data().displayName : doc.data().name}</p>
                 <p>Email: ${user.data().email}</p>
                 <p>Phone: ${doc.data().phone}</p>
                 <p>Address: ${doc.data().address}</p>
