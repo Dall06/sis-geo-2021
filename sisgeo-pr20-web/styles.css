@@ -5,3 +5,7 @@
     padding: 10px;
     position: relative;
 }
+
+.logged-in, .logged-out {
+    display: none;
+}

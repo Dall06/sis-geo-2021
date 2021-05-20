@@ -1,10 +1,14 @@
 LoginForm.addEventListener('submit',(event)=> {
     event.preventDefault();
-    var loginModel = new Login(
+    var sigiInModel = new User(
         null,
         LoginForm.email.value,
         LoginForm.password.value
     );
-    loginModel.Login();
-    
+    sigiInModel.Login();
 });
+
+const SignInWithGoogle = () => {
+    var userModel = new User();
+    userModel.SignInWithGoogle();
+}

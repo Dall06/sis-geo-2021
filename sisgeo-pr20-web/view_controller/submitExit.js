@@ -1,7 +1,6 @@
 ExitLi.addEventListener('click', (event) => {
     event.preventDefault();
 
-    var loginModel = new Login();
+    var loginModel = new User();
     loginModel.Logout();
-    
 });
