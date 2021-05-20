@@ -64,14 +64,15 @@ class User {
             var user = result.user;
 
             const html = `
-                <p>Name: ${doc.data().name}</p>
+                <p>Name: ${user.displayName}</p>
                 <p>Email: ${user.email}</p>
                 <img src="${user.photoURL}">
             `;
+            FetchInfoDiv.innerHTML = html;
             LoginForm.reset();
             $('#loginModal').modal('hide');
-            FetchInfoDiv.innerHTML = html;
-        }).catch(function (error) {
+        }
+        ).catch(function (error) {
             LoginForm.querySelector('.error').innerHTML = validateErrMsj(err.code);
             console.log(error);
         });
