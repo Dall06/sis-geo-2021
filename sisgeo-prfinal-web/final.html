@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Hello, Human!</title>
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Image and text -->
+            <a class="navbar-brand" href="#">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/robot-130-530368.png" alt="" width="30"
+                    height="24" class="d-inline-block align-top">
+                Final project
+            </a>
+        </div>
+    </nav>
+</header>
+
+<body id="body" class="bg-dark">
+
+    <div class="" id="main-div">
+        <div class="card text-center" id="main-card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="a-login" onclick="onClickToLogIn()">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="a-signup" onclick="onClickToSignUp()">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body" id="login-tab">
+                <h5 class="card-title">LogIn</h5>
+                <form id="loginForm">
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">email</span>
+                        <input id="inEmail" type="text" name="email" class="form-control" id="email" required
+                            placeholder="email" aria-label="email">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">password</span>
+                        <input id="inPass" type="password" name="password" class="form-control" required
+                            placeholder="password" id="password" aria-label="password">
+                    </div>
+
+                    <div class="modal-footer mb-3 text-center">
+                        <div class="text-center">
+                            <button class="btn btn-warning" type="button" onclick="SignInWithGoogle()">Sign In with
+                                Google</button>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" id="login-btn">Log In</button>
+                        </div>
+                        <p class="error text-danger"></p>
+                    </div>
+
+                </form>
+            </div>
+            <div class="card-body d-none" id="signup-tab">
+                <h5 class="card-title">SignUp</h5>
+                <form id="signupForm">
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="signin-email">email</span>
+                        <input id="inEmail" type="text" name="signup_email" class="form-control" required
+                            placeholder="email" aria-label="email" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="signup-password">password</span>
+                        <input id="inPass" name="signup_password" type="password" class="form-control" required
+                            placeholder="password" aria-label="password" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="signup-name">name</span>
+                        <input id="inName" name="signup_name" type="text" class="form-control" required
+                            placeholder="name" aria-label="name" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="signup-phone">phone</span>
+                        <input id="inPhone" name="signup_phone" type="text" class="form-control" required
+                            placeholder="phone" aria-label="phone" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="signup-address">address</span>
+                        <input id="inAddress" name="signup_address" type="text" class="form-control" required
+                            placeholder="address" aria-label="phone" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="modal-footer mb-3 text-center">
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" id="signup-btn">Sign Up</button>
+                            <p class="error text-danger"></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-none" id="logged-div">
+
+        <div class="row gx-5">
+
+            <div class="col-lg-6 col-md-12">
+                <div class="card mb-3 logged-c" style="max-width: 100%;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://picsum.photos/200/150/?blur" id="image-source" alt="..."
+                                style="width: 100%; height: 150px;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body" id="account-info-card">
+                                <h5 class="card-title">Account information</h5>
+                            </div>
+                            <button type="button" id="exit-btn" class="btn btn-danger">Log out</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="card mb-3 logged-c" style="max-width: 100%;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body" id="account-info-card">
+                                <h5 class="card-title">Last Logged locations</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row gx-5">
+            <div class="">
+                <div class="card mb-3 logged-c" style="max-width: 100%; max-height: 45rem; overflow-y: scroll">
+                    <div class="row g-0">
+                        <div class="col-md-12">
+                            <div class="card-body" id="account-info-card">
+                                <h5 class="card-title">New Activities</h5>
+                                <form id="todo-form">
+                                    <div>
+                                        <input type="text" name="title" required class="form-control"
+                                            placeholder="title">
+                                        <br>
+                                        <input type="text" name="description" required class="form-control"
+                                            placeholder="description">
+                                        <br>
+                                        <input type="text" name="category" required class="form-control"
+                                            placeholder="category">
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">Add</a>
+                                    </div>
+                                </form>
+                                <ul class="list-group" id="todos-list">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gx-5">
+            <div class="">
+                <div class="card mb-3 logged-c" style="max-width: 100%; max-height: 30rem; overflow-y: scroll">
+                    <div class="row g-0">
+                        <div class="col-md-12">
+                            <div class="card-body" id="account-info-card">
+                                <h5 class="card-title">New top Songs</h5>
+                                <ul class="list-group" id="songs-list">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVCNZHDPwh-wnnOTVGqDUjgOLIpHhcFaE&callback=initMap"
+        async defer>
+        </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- <script src="index.js"></script> -->
+    <script src="database/database.js"></script>
+    <script src="constants.js"></script>
+    <script src="model/user.js"></script>
+    <script src="view_controller/viewController.js"></script>
+    <script src="view_controller/submitLogin.js"></script>
+    <script src="view_controller/submitExit.js"></script>
+    <script src="view_controller/submitSignUp.js"></script>
+    <script src="view_controller/fetchAccountInfo.js"></script>
+    <script src="view_controller/fetchSongsInfo.js"></script>
+    <script src="view_controller/actionsTodoList.js"></script>
+    <script src="view_controller/loadMap.js"></script>
+</body>
+
+</html>

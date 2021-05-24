@@ -1,4 +1,4 @@
-let divMap = document.getElementById('divMap');
+var divMap = document.getElementById('divMap');
 var coords = {
     lat: 19.041325, lng: -98.210819,
 }
@@ -18,7 +18,7 @@ function initMap() {
         strokeWeight: 2,
         fillColor: 0.25,
         map: map,
-        center: location,
+        center: coords,
         radius: Math.sqrt(location.poblation),
     });
 }

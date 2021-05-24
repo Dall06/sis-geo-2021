@@ -29,8 +29,6 @@ auth.onAuthStateChanged((user) => {
         database.collection("todos").onSnapshot(snapshot => {
             let changes = snapshot.docChanges();
             ConfigureMenu(user);
-            localion.lat = user.lat;
-            location.lng = user.lng;
 
             changes.forEach((change) => {
                 if (change.type == "added") {
@@ -66,19 +64,8 @@ auth.onAuthStateChanged((user) => {
                     TODOsList.removeChild(id);
                 }
             });
-        })
+        });
 
-
-
-        var name, email, photoUrl, uid, emailVerified;
-
-        name = user.displayName;
-        email = user.email;
-        photoUrl = user.photoURL;
-        emailVerified = user.emailVerified;
-        uid = user.uid;
-
-        console.log(name, email, photoUrl, emailVerified, uid);
     } else {
         ConfigureMenu();
     }
