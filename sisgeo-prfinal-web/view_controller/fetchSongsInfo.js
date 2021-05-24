@@ -7,7 +7,7 @@ const loadSongsInfo = () => {
             let songsToAppend = ``;
             dataList.forEach((song) => {
                 songsToAppend += `
-                <div class="row">
+                <li class="list-group-item">
                     <div class="card mb-3 border-info" style="max-width: 100%;">
                     <div class="row g-0">
                         <div class="col-md-4">
@@ -21,7 +21,7 @@ const loadSongsInfo = () => {
                         </div>
                     </div>
                     </div>
-                </div>
+                </li>
                 `
             });
             SongsList.innerHTML = songsToAppend;
