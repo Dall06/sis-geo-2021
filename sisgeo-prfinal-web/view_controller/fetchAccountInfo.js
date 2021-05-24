@@ -29,9 +29,16 @@ const onDelete = (e) => {
 
 auth.onAuthStateChanged((user) => {
     if (user) {
+        console.log('user')
+        console.log(user)
+
+        MainDiv.classList.add('d-none');
+        LoggedDiv.classList.remove('d-none');
+        loadSongsInfo();
+
+        ConfigureMenu(user);
         database.collection("todos").onSnapshot(snapshot => {
             let changes = snapshot.docChanges();
-            ConfigureMenu(user);
             changes.forEach((change) => {
                 if (change.type == "added") {
                     var doc = change.doc;
@@ -67,8 +74,10 @@ auth.onAuthStateChanged((user) => {
                 }
             });
         });
-
     } else {
+        MainDiv.classList.remove('d-none');
+        LoggedDiv.classList.add('d-none');
+        console.log('no user')
         ConfigureMenu();
     }
 });
