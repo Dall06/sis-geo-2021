@@ -4,6 +4,7 @@ const ConfigureMenu = (user) => {
             database.collection('users').doc(user.uid).get().then(doc => {
                 console.log(user);
                 setMarker(doc.data());
+                AccountImgSrc.src = 'https://picsum.photos/200/150/?blur'
                 const html = `
                     <p>Name: ${doc.data().name}</p>
                     <p>Email: ${user.email}</p>
