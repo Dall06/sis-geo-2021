@@ -1,27 +1,27 @@
-var divMap = document.getElementById('divMap');
 var coords = {
-    lat: 19.041325, lng: -98.210819,
-}
-var map;
+    lat: 0,
+    lng: 0
+};
+
 var props = {
     center: coords,
-    zoom: 6,
-    mapTypeId: 'terrain',
-}
+    zoom: 2
+};
+
+const setMarker = (user) => {
+    marker = {
+        longitude: user.lng,
+        latitude: user.lat,
+    };
+};
 
 function initMap() {
-    if(isLogged == true) {
-        console.log('hi')
-        map = new google.maps.Map(divMap, props);
-    
-        let circle = new google.maps.Circle({
-            strokeColor: '#FF0000',
-            strokeOpacity: 0.6,
-            strokeWeight: 2,
-            fillColor: 0.25,
-            map: map,
-            center: usercoords,
-            radius: Math.sqrt(location.poblation),
-        });
-    }
+    const map = new google.maps.Map(document.getElementById('divMap'), props);
+    const _marker = marker;
+
+    let m = new google.maps.Marker({
+        map: map,
+        position: new google.maps.LatLng(_marker.latitude, _marker.longitude),
+        title: "Last location"
+    });
 }

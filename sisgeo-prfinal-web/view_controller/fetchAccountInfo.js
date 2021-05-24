@@ -2,9 +2,7 @@ const ConfigureMenu = (user) => {
     if (user) {
         if (isGoogleLogged == false) {
             database.collection('users').doc(user.uid).get().then(doc => {
-                userCoords.lat = doc.data().lat;
-                userCoords.lng = doc.data().lng;
-                initMap()
+                setMarker(doc.data());
                 const html = `
                     <p>Name: ${doc.data().name}</p>
                     <p>Email: ${user.email}</p>
