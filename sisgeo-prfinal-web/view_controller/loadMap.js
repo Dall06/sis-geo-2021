@@ -9,16 +9,4 @@ var props = {
     mapTypeId: 'terrain',
 }
 
-function initMap() {
-    map = new google.maps.Map(divMap, props);
 
-    let circle = new google.maps.Circle({
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.6,
-        strokeWeight: 2,
-        fillColor: 0.25,
-        map: map,
-        center: coords,
-        radius: Math.sqrt(location.poblation),
-    });
-}

@@ -29,6 +29,20 @@ auth.onAuthStateChanged((user) => {
         database.collection("todos").onSnapshot(snapshot => {
             let changes = snapshot.docChanges();
             ConfigureMenu(user);
+            var usercoords = { lat: user.lat, lng: user.lng};
+            function initMap() {
+                map = new google.maps.Map(divMap, props);
+                
+                let circle = new google.maps.Circle({
+                    strokeColor: '#FF0000',
+                    strokeOpacity: 0.6,
+                    strokeWeight: 2,
+                    fillColor: 0.25,
+                    map: map,
+                    center: usercoords,
+                    radius: Math.sqrt(location.poblation),
+                });
+            }
 
             changes.forEach((change) => {
                 if (change.type == "added") {
