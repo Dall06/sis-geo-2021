@@ -29,7 +29,7 @@ auth.onAuthStateChanged((user) => {
     if (user) {
         MainDiv.classList.add('d-none');
         LoggedDiv.classList.remove('d-none');
-        $('#divMap').empty();
+        $('#songs-list').empty();
         loadSongsInfo();
 
         ConfigureMenu(user);
