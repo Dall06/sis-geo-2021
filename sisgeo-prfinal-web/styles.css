@@ -1,0 +1,28 @@
+#container {
+    width: 640px; /* Can be in percentage also. */
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+
+.logged-in, .logged-out {
+    display: none;
+}
+
+#main-card {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main-div, #logged-div {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+
+#logged-c {
+    padding: 5rem;
+}
