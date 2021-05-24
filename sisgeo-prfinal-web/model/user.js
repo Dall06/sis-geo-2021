@@ -61,8 +61,8 @@ class User {
             })
         }).then(() => {
             SignUpForm.reset();
-            document.getElementById('main-div').classList.remove('d-none');
-            document.getElementById('logged-div').classList.add('d-none');
+            document.getElementById('main-div').classList.add('d-none');
+            document.getElementById('logged-div').classList.remove('d-none');
             loadSongsInfo();
         }).catch((err) => {
             SignUpForm.querySelector('.error').innerHTML = validateErrMsj(err.code);

@@ -24,8 +24,7 @@ auth.onAuthStateChanged((user) => {
         }, err => {
             console.log(err.message);
         });
-        return;
+    } else {
+        ConfigureMenu();
     }
-    ConfigureMenu();
-    return;
 });
