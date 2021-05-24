@@ -45,7 +45,7 @@ class User {
                     });
                 });
             }
-
+            TODOsList.innerHTML = '';
             document.getElementById('main-div').classList.remove('d-none');
             document.getElementById('logged-div').classList.add('d-none');
         });
