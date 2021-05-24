@@ -2,12 +2,12 @@ LoginForm.addEventListener('submit', (event) => {
     isGoogleLogged = false;
     
     event.preventDefault();
-    var sigiInModel = new User(
+    var signInModel = new User(
         null,
         LoginForm.email.value,
         LoginForm.password.value
     );
-    sigiInModel.Login();
+    signInModel.Login();
 });
 
 const SignInWithGoogle = () => {
@@ -28,7 +28,7 @@ const SignInWithGoogle = () => {
         LoginForm.reset();
         document.getElementById('main-div').classList.add('d-none');
         document.getElementById('logged-div').classList.remove('d-none');
-        
+        loadSongsInfo();
         AccountInfoCard.innerHTML = html;
     }
     ).catch(function (error) {

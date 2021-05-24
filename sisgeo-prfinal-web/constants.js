@@ -1,4 +1,5 @@
 const SignUpForm = document.getElementById("signupForm");
+const TodoForm = document.getElementById("todo-form");
 const LoginForm = document.getElementById("loginForm");
 const SongsList = document.getElementById('songs-list');
 const TODOsList = document.getElementById('todos-list');
