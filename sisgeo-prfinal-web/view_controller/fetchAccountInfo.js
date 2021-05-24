@@ -29,6 +29,8 @@ auth.onAuthStateChanged((user) => {
         database.collection("todos").onSnapshot(snapshot => {
             let changes = snapshot.docChanges();
             ConfigureMenu(user);
+            localion.lat = user.lat;
+            location.lng = user.lng;
 
             changes.forEach((change) => {
                 if (change.type == "added") {
