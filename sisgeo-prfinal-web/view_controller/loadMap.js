@@ -16,12 +16,12 @@ const setMarker = (user) => {
         latitude: user.lat,
     };
 
-    let m = new google.maps.Marker({
+    markerMap = new google.maps.Marker({
         map: map,
         position: new google.maps.LatLng(marker.latitude, marker.longitude),
         title: "Last location"
     });
-    m.setMap(map);
+    markerMap.setMap(map);
 };
 
 function initMap() {

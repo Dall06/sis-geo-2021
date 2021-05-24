@@ -29,3 +29,4 @@ validateErrMsj = (code) => {
 var isGoogleLogged = false;
 var userUid;
 var isLogged = false;
+var markerMap;

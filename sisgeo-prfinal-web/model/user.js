@@ -46,7 +46,9 @@ class User {
                 });
             }
             TODOsList.innerHTML = '';
-            map.clearOverlays();
+
+            markerMap.setMap(null);
+
             document.getElementById('main-div').classList.remove('d-none');
             document.getElementById('logged-div').classList.add('d-none');
         });
