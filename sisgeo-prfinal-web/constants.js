@@ -23,8 +23,3 @@ validateErrMsj = (code) => {
 var isGoogleLogged = false;
 var userUid;
 var isLogged = false;
-
-var marker = {
-    longitude: "-99.1276",
-    latitude: "19.427"
-};

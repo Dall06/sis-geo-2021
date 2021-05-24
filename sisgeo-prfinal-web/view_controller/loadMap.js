@@ -11,7 +11,7 @@ var props = {
 };
 
 const setMarker = (user) => {
-    marker = {
+    var marker = {
         longitude: user.lng,
         latitude: user.lat,
     };
@@ -22,7 +22,7 @@ const setMarker = (user) => {
         position: new google.maps.LatLng(_marker.latitude, _marker.longitude),
         title: "Last location"
     });
-    marker.setMap(map);
+    m.setMap(map);
 };
 
 function initMap() {

@@ -2,6 +2,8 @@ const ConfigureMenu = (user) => {
     if (user) {
         if (isGoogleLogged == false) {
             database.collection('users').doc(user.uid).get().then(doc => {
+                console.log(user);
+                console.log(user.data());
                 setMarker(doc.data());
                 const html = `
                     <p>Name: ${doc.data().name}</p>
