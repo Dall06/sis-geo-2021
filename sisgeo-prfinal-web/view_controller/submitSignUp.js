@@ -12,5 +12,4 @@ SignUpForm,addEventListener('submit', (event) => {
         phone: SignUpForm.signup_phone.value,
         address: SignUpForm.signup_address.value
     });
-    $('#songs-list').empty();
 });
