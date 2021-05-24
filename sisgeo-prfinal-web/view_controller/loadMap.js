@@ -15,11 +15,10 @@ const setMarker = (user) => {
         longitude: user.lng,
         latitude: user.lat,
     };
-    const _marker = marker;
 
     let m = new google.maps.Marker({
         map: map,
-        position: new google.maps.LatLng(_marker.latitude, _marker.longitude),
+        position: new google.maps.LatLng(marker.latitude, marker.longitude),
         title: "Last location"
     });
     m.setMap(map);
