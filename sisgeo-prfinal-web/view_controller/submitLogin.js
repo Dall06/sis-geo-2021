@@ -13,6 +13,7 @@ LoginForm.addEventListener('submit', (event) => {
 const SignInWithGoogle = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
     isGoogleLogged = true;
+    $('#songs-list').empty();
 
     firebase.auth().signInWithPopup(provider).then((result) => {
 
