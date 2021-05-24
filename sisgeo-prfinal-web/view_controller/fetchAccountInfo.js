@@ -22,15 +22,11 @@ const ConfigureMenu = (user) => {
 const onDelete = (e) => {
     e.preventDefault();
     let id = e.target.parentElement.getAttribute("id");
-    console.log('hi there')
     database.collection("todos").doc(id).delete();
 }
 
 auth.onAuthStateChanged((user) => {
     if (user) {
-        console.log('user')
-        console.log(user)
-
         MainDiv.classList.add('d-none');
         LoggedDiv.classList.remove('d-none');
         SongsList.innerHTML = '';
@@ -38,6 +34,7 @@ auth.onAuthStateChanged((user) => {
 
         ConfigureMenu(user);
         database.collection("todos").onSnapshot(snapshot => {
+            console.log('todos load')
             let changes = snapshot.docChanges();
             changes.forEach((change) => {
                 if (change.type == "added") {
