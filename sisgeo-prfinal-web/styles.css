@@ -6,9 +6,6 @@
     position: relative;
 }
 
-.logged-in, .logged-out {
-    display: none;
-}
 
 #main-card {
     margin-left: auto;
@@ -29,7 +26,7 @@
 
 #divMap {
     width: 95%;
-    height: 10rem;
+    height: 35rem;
     margin: 0 auto;
     margin-bottom: 1rem;
     padding: 1rem;
