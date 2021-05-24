@@ -3,4 +3,5 @@ ExitButton.addEventListener('click', (event) => {
 
     var loginModel = new User();
     loginModel.Logout();
+    isLogged = false;
 });

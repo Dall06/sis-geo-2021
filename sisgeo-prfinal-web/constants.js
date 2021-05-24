@@ -22,3 +22,6 @@ validateErrMsj = (code) => {
 
 var isGoogleLogged = false;
 var userUid;
+var isLogged = false;
+
+var userCoords = { lat: 0, lng: 0};

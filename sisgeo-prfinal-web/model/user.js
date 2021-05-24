@@ -23,6 +23,7 @@ class User {
             userUid = response.user.uid;
             console.log(userUid);
         }).then(() => {
+            isLogged = true;
             LoginForm.reset();
             document.getElementById('main-div').classList.add('d-none');
             document.getElementById('logged-div').classList.remove('d-none');
@@ -61,6 +62,7 @@ class User {
                 lng: 0.0,
             });
         }).then(() => {
+            isLogged = true;
             SignUpForm.reset();
             document.getElementById('main-div').classList.add('d-none');
             document.getElementById('logged-div').classList.remove('d-none');
