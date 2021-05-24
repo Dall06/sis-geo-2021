@@ -33,6 +33,7 @@ auth.onAuthStateChanged((user) => {
 
         MainDiv.classList.add('d-none');
         LoggedDiv.classList.remove('d-none');
+        SongsList.innerHTML = '';
         loadSongsInfo();
 
         ConfigureMenu(user);

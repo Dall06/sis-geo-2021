@@ -5,7 +5,6 @@ const loadSongsInfo = () => {
         response.json().then((data) => {
             let dataList = data.tracks;
             let songsToAppend = ``;
-            SongsList.innerHTML = songsToAppend;
             dataList.forEach((song) => {
                 songsToAppend += `
                 <li class="list-group-item border-info">
