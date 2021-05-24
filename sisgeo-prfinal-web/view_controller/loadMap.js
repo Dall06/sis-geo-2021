@@ -11,6 +11,7 @@ var props = {
 
 function initMap() {
     if(isLogged == true) {
+        console.log('hi')
         map = new google.maps.Map(divMap, props);
     
         let circle = new google.maps.Circle({
