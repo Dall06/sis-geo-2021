@@ -4,6 +4,7 @@ const ConfigureMenu = (user) => {
             database.collection('users').doc(user.uid).get().then(doc => {
                 userCoords.lat = doc.data().lat;
                 userCoords.lng = doc.data().lng;
+                initMap()
                 const html = `
                     <p>Name: ${doc.data().name}</p>
                     <p>Email: ${user.email}</p>
