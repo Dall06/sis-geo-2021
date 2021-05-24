@@ -5,3 +5,4 @@ const AccountInfoCard = document.getElementById('account-info-card');
 const AccountImgSrc = document.getElementById('image-source');
 
 var isGoogleLogged = false;
+var userUid;

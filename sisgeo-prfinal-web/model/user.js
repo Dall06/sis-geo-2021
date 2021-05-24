@@ -19,8 +19,8 @@ class User {
     };
 
     Login = () => {
-        auth.signInWithEmailAndPassword(this.email, this.password).then((_) => {
-            alert('Logged');
+        auth.signInWithEmailAndPassword(this.email, this.password).then((response) => {
+            console.log(response)
         }).then(() => {
             LoginForm.reset();
             document.getElementById('main-div').classList.add('d-none');
@@ -31,7 +31,18 @@ class User {
         });
     }
 
+    setLastPosition = (p) => {
+        database.collection('users').doc(credentials.user.uid).update({
+            lat: p.coords.latitude,
+            lng: p.coords.longitude,
+        })
+    }
+
     Logout = () => {
+        if (navigator.geolocation ) {
+            navigator.geolocation.getCurrentPosition(setLastPosition);
+        }
+
         auth.signOut().then(() => {
             document.getElementById('main-div').classList.remove('d-none');
             document.getElementById('logged-div').classList.add('d-none');
@@ -42,9 +53,11 @@ class User {
         auth.createUserWithEmailAndPassword(this.email, this.password).then((credentials) => {
             alert('Signed Up');
             return database.collection('users').doc(credentials.user.uid).set({
-                user: object.name,
-                name: object.phone,
-                address: object.address
+                name: object.name,
+                phone: object.phone,
+                address: object.address,
+                lat: 0.0,
+                lng: 0.0,
             })
         }).then(() => {
             SignUpForm.reset();
