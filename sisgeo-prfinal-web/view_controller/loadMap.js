@@ -11,7 +11,7 @@ var props = {
 };
 
 const setMarker = (user) => {
-    var marker = {
+    let marker = {
         longitude: user.lng,
         latitude: user.lat,
     };
