@@ -25,8 +25,9 @@ class User {
         }).then(() => {
             isLogged = true;
             LoginForm.reset();
-            document.getElementById('main-div').classList.add('d-none');
-            document.getElementById('logged-div').classList.remove('d-none');
+
+            MainDiv.classList.add('d-none');
+            LoggedDiv.classList.remove('d-none');
             loadSongsInfo();
         }).catch((err) => {
             LoginForm.querySelector('.error').innerHTML = validateErrMsj(err.code);
@@ -64,8 +65,8 @@ class User {
         }).then(() => {
             isLogged = true;
             SignUpForm.reset();
-            document.getElementById('main-div').classList.add('d-none');
-            document.getElementById('logged-div').classList.remove('d-none');
+            MainDiv.classList.add('d-none');
+            LoggedDiv.classList.remove('d-none');
             loadSongsInfo();
         }).catch((err) => {
             SignUpForm.querySelector('.error').innerHTML = validateErrMsj(err.code);

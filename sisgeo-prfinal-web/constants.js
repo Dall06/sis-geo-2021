@@ -6,6 +6,12 @@ const TODOsList = document.getElementById('todos-list');
 const AccountInfoCard = document.getElementById('account-info-card');
 const AccountImgSrc = document.getElementById('image-source');
 const ExitButton = document.getElementById('exit-btn');
+const MainDiv = document.getElementById('main-div');
+const LoggedDiv = document.getElementById('logged-div');
+const loginTab = document.getElementById("login-tab");
+const loginA = document.getElementById("a-login");
+const signUpA = document.getElementById("a-signup");
+const signUpTab = document.getElementById("signup-tab");
 
 validateErrMsj = (code) => {
     switch (code) {

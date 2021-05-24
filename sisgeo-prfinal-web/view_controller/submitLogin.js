@@ -26,8 +26,8 @@ const SignInWithGoogle = () => {
         AccountImgSrc.src = user.photoURL;
         
         LoginForm.reset();
-        document.getElementById('main-div').classList.add('d-none');
-        document.getElementById('logged-div').classList.remove('d-none');
+        MainDiv.classList.add('d-none');
+        LoggedDiv.classList.remove('d-none');
         loadSongsInfo();
         AccountInfoCard.innerHTML = html;
     }
