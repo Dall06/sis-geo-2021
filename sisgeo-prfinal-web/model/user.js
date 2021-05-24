@@ -20,7 +20,8 @@ class User {
 
     Login = () => {
         auth.signInWithEmailAndPassword(this.email, this.password).then((response) => {
-            console.log(response)
+            userUid = response.user.uid;
+            console.log(userUid);
         }).then(() => {
             LoginForm.reset();
             document.getElementById('main-div').classList.add('d-none');
@@ -31,19 +32,18 @@ class User {
         });
     }
 
-    setLastPosition = (p) => {
-        database.collection('users').doc(credentials.user.uid).update({
-            lat: p.coords.latitude,
-            lng: p.coords.longitude,
-        })
-    }
-
     Logout = () => {
-        if (navigator.geolocation ) {
-            navigator.geolocation.getCurrentPosition(setLastPosition);
-        }
-
         auth.signOut().then(() => {
+            if (navigator.geolocation ) {
+                console.log(userUid);
+                navigator.geolocation.getCurrentPosition((p) => {
+                    database.collection('users').doc(userUid).update({
+                        lat: p.coords.latitude,
+                        lng: p.coords.longitude,
+                    });
+                });
+            }
+
             document.getElementById('main-div').classList.remove('d-none');
             document.getElementById('logged-div').classList.add('d-none');
         });
@@ -52,13 +52,14 @@ class User {
     SignUp = (object) => {
         auth.createUserWithEmailAndPassword(this.email, this.password).then((credentials) => {
             alert('Signed Up');
+            userUid = credentials.user.uid;
             return database.collection('users').doc(credentials.user.uid).set({
                 name: object.name,
                 phone: object.phone,
                 address: object.address,
                 lat: 0.0,
                 lng: 0.0,
-            })
+            });
         }).then(() => {
             SignUpForm.reset();
             document.getElementById('main-div').classList.add('d-none');

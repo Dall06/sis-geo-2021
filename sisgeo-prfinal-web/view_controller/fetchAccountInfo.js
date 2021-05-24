@@ -19,12 +19,25 @@ const ConfigureMenu = (user) => {
 
 auth.onAuthStateChanged((user) => {
     if (user) {
-        database.collection('food').onSnapshot(snapshot => {
+        database.collection('todos').onSnapshot(snapshot => {
+            GetTODOS(snapshot);
             ConfigureMenu(user);
         }, err => {
             console.log(err.message);
         });
+
+        
+        var name, email, photoUrl, uid, emailVerified;
+
+        name = user.displayName;
+        email = user.email;
+        photoUrl = user.photoURL;
+        emailVerified = user.emailVerified;
+        uid = user.uid;
+
+        console.log(name, email, photoUrl, emailVerified, uid);
     } else {
+        GetTODOS([]);
         ConfigureMenu();
     }
 });
