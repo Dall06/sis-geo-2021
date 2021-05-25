@@ -1,14 +1,7 @@
-var map;
-
-var coords = {
-    lat: 0,
-    lng: 0
-};
-
-var props = {
-    center: coords,
-    zoom: 2
-};
+function initMap() {
+    map = new google.maps.Map(document.getElementById('divMap'), props);
+}
+initMap();
 
 const setMarker = (user) => {
     let positionCoords = {
@@ -37,7 +30,3 @@ const setMarker = (user) => {
         }
     });
 };
-
-function initMap() {
-    map = new google.maps.Map(document.getElementById('divMap'), props);
-}
