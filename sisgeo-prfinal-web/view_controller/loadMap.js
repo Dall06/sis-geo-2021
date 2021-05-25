@@ -11,17 +11,31 @@ var props = {
 };
 
 const setMarker = (user) => {
-    let marker = {
-        longitude: user.lng,
-        latitude: user.lat,
+    let positionCoords = {
+        lng: user.lng,
+        lat: user.lat,
     };
 
-    markerMap = new google.maps.Marker({
-        map: map,
-        position: new google.maps.LatLng(marker.latitude, marker.longitude),
-        title: "Last location"
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ 'location': {lat: positionCoords.lat, lng: positionCoords.lng} }, function (results, status) {
+        if (status == 'OK') {
+            var locationP = document.getElementById('location-p');
+            locationP.innerHTML = `
+                <p><strong>Detalles:</strong> ${ results[0].formatted_address} </p>
+            `;
+            map.setCenter(results[0].geometry.location);
+
+            markerMap = new google.maps.Marker({
+                map: map,
+                position: new google.maps.LatLng(positionCoords.lat, positionCoords.lng),
+                title: "Last location"
+            });
+            markerMap.setMap(map);
+        }
+        else {
+            alert('Geocode no se ejecuto con éxito.');
+        }
     });
-    markerMap.setMap(map);
 };
 
 function initMap() {
