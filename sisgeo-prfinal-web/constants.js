@@ -32,12 +32,3 @@ var isLogged = false;
 
 var markerMap;
 var map;
-var coords = {
-    lat: 0,
-    lng: 0
-};
-
-var props = {
-    center: coords,
-    zoom: 2
-};
