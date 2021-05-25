@@ -26,7 +26,7 @@ const setMarker = (user) => {
         if (status == 'OK') {
             var locationP = document.getElementById('location-p');
             locationP.innerHTML = `
-                <p><strong>Detalles:</strong> ${ results[0].formatted_address} </p>
+                <p><strong>Detail:</strong> ${ results[0].formatted_address} </p>
             `;
             
             markerMap = new google.maps.Marker({
@@ -37,7 +37,10 @@ const setMarker = (user) => {
             markerMap.setMap(map);
         }
         else {
-            alert('No data. Maybe it is your first login');
+            var locationP = document.getElementById('location-p');
+            locationP.innerHTML = `
+                <p><strong>Info:</strong>No data. Maybe it is your first login</p>
+            `;
         }
     });
 };
