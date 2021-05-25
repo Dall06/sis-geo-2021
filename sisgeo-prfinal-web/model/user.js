@@ -49,6 +49,9 @@ class User {
 
             markerMap.setMap(null);
 
+            var locationP = document.getElementById('location-p');
+            locationP.innerHTML = ``;
+
             document.getElementById('main-div').classList.remove('d-none');
             document.getElementById('logged-div').classList.add('d-none');
         });
