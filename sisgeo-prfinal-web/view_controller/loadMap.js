@@ -37,7 +37,7 @@ const setMarker = (user) => {
             markerMap.setMap(map);
         }
         else {
-            alert('Geocode no se ejecuto con éxito.');
+            alert('No data. Maybe it is your first login');
         }
     });
 };
