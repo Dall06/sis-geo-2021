@@ -12,10 +12,12 @@ validateErrMsj = (code) => {
 }
 
 class User {
-    constructor(id, email, password) {
+    constructor(id, email, password, lat, lng) {
         this.id = id;
         this.email = email;
         this.password = password;
+        this.lat = lat;
+        this.lng = lng;
     };
 
     Login = () => {
@@ -65,8 +67,8 @@ class User {
                 name: object.name,
                 phone: object.phone,
                 address: object.address,
-                lat: 0.0,
-                lng: 0.0,
+                lat: object.lat,
+                lng: object.lng,
             });
         }).then(() => {
             isLogged = true;

@@ -5,11 +5,15 @@ SignUpForm,addEventListener('submit', (event) => {
         null,
         SignUpForm.signup_email.value,
         SignUpForm.signup_password.value,
+        0.0,
+        0.0
     );
     
     signUpModel.SignUp({
         name: SignUpForm.signup_name.value,
         phone: SignUpForm.signup_phone.value,
-        address: SignUpForm.signup_address.value
+        address: SignUpForm.signup_address.value,
+        lat: 0.0,
+        lng: 0.0
     });
 });

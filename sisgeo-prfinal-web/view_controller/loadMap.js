@@ -28,8 +28,7 @@ const setMarker = (user) => {
             locationP.innerHTML = `
                 <p><strong>Detalles:</strong> ${ results[0].formatted_address} </p>
             `;
-            // map.setCenter(results[0].geometry.location);
-
+            
             markerMap = new google.maps.Marker({
                 map: map,
                 position: new google.maps.LatLng(positionCoords.lat, positionCoords.lng),
